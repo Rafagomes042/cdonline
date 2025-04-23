@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrinho | Casa do Dentista</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="conteudo-principal">
+    <h1 class="titulo-principal">Seu Carrinho</h1>
+    <section id="lista-carrinho" class="lista-produtos"></section>
+    <p id="total" class="total-compra"></p>
+
+    <div class="formulario-finalizar">
+      <button onclick="finalizarPedido()" class="btn">Finalizar Pedido</button>
+    </div>
+  </main>
+
+  <nav class="menu-inferior">
+    <button onclick="location.href='index.html'">Início</button>
+    <button onclick="location.href='listas.html'">Listas</button>
+    <button onclick="location.href='carrinho.html'">Carrinho</button>
+  </nav>
+
+  <script src="produtos.js"></script>
+  <script src="carrinho.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cliente = JSON.parse(localStorage.getItem("cliente"));
+      if (!cliente) {
+        alert("Você precisa se cadastrar antes de acessar o carrinho.");
+        window.location.href = "cadastro.html";
+      }
+    });
+  </script>
+</body>
+</html>

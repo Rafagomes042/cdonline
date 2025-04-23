@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listas Prontas - Casa do Dentista</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="user-info">
+      <h2>Bem-vindo, <span id="nomeCliente"></span>!</h2>
+    </div>
+    <div class="titulo-listas">
+      <h1>Listas Prontas</h1>
+      <h2>Escolha um semestre abaixo</h2>
+    </div>
+  </header>
+
+  <main>
+    <!-- Botões dos semestres -->
+    <div id="botoes-listas">
+      <button class="btn-semestre" onclick="abrirLista('Primeiro Semestre')">Primeiro Semestre</button>
+      <button class="btn-semestre" onclick="abrirLista('Segundo Semestre')">Segundo Semestre</button>
+      <button class="btn-semestre" onclick="abrirLista('Terceiro Semestre')">Terceiro Semestre</button>
+      <button class="btn-semestre" onclick="abrirLista('Quarto Semestre')">Quarto Semestre</button>
+      <button class="btn-semestre" onclick="abrirLista('Quinto Semestre')">Quinto Semestre</button>
+    </div>
+
+    <!-- Produtos da lista -->
+    <section id="lista-produtos">
+      <!-- Os produtos da lista selecionada aparecerão aqui -->
+    </section>
+  </main>
+
+  <!-- Barra de navegação inferior -->
+  <div class="menu-inferior">
+    <a href="index.html"><button>Produtos</button></a>
+    <a href="listas.html"><button>Listas</button></a>
+    <a href="carrinho.html"><button>Carrinho</button></a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="produtos.js"></script>
+  <script src="listas.js"></script>
+  <script>
+    function abrirImagem(imagemSrc) {
+      const modal = document.createElement("div");
+      modal.classList.add("imagem-modal");
+      modal.innerHTML = `
+        <div class="imagem-modal-conteudo">
+          <span class="fechar-modal" onclick="document.body.removeChild(this.parentElement.parentElement)">×</span>
+          <img src="${imagemSrc}" alt="Imagem ampliada">
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    const cliente = JSON.parse(localStorage.getItem("cliente"));
+    if (cliente) {
+      document.getElementById("nomeCliente").textContent = cliente.nome;
+    }
+  </script>
+</body>
+</html>

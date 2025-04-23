@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Casa do Dentista</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="user-info">
+      <h2>Bem-vindo, <span id="nomeCliente"></span>!</h2>
+    </div>
+    <div class="titulo-listas">
+      <h1>Catálogo de Produtos</h1>
+    </div>
+    <div class="barra-pesquisa">
+      <input type="text" id="searchInput" placeholder="Buscar produto...">
+    </div>
+  </header>
+
+  <main>
+    <section id="produtosContainer"></section>
+  </main>
+
+  <div class="menu-inferior">
+    <a href="index.html"><button>Produtos</button></a>
+    <a href="listas.html"><button>Listas</button></a>
+    <a href="carrinho.html"><button>Carrinho</button></a>
+  </div>
+
+  <script src="produtos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

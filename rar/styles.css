@@ -1,0 +1,454 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #e0f7fa;
+  color: #004d40;
+  padding-bottom: 80px;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(to right, #00796b, #00bfa5);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #004d40;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-info .btn {
+  background: white;
+  color: #00796b;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-info .btn:hover {
+  background: #e0f2f1;
+  transform: scale(1.05);
+}
+
+/* TÍTULOS GERAIS */
+.titulo-listas {
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.titulo-listas h1 {
+  font-size: 30px;
+  color: #ffffff;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-listas h2 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #d0f8f5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* TÍTULO DA LISTA DE PRODUTOS */
+.cabecalho-lista {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.titulo-lista-produtos {
+  font-size: 26px;
+  color: #00796b;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #00bfa5;
+  display: inline-block;
+}
+
+/* BARRA DE PESQUISA */
+.barra-pesquisa {
+  margin: 15px auto 0;
+  max-width: 500px;
+  padding: 0 15px;
+}
+
+.barra-pesquisa input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.barra-pesquisa input:focus {
+  border: 2px solid #00bfa5;
+}
+
+/* GRADE DE PRODUTOS */
+#produtosContainer,
+#lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* PRODUTO */
+.item-produto {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  gap: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.imagem-produto {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.imagem-produto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.info-produto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .item-produto {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .imagem-produto {
+    width: 100%;
+    height: auto;
+  }
+
+  .imagem-produto img {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+  }
+
+  .btn-adicionar {
+    width: 100%;
+  }
+
+  .formulario-finalizar .btn {
+    width: 100%;
+  }
+}
+
+/* BOTÕES */
+.btn {
+  background: #00796b;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #004d40;
+  transform: scale(1.05);
+}
+
+.btn-quantidade {
+  background: #e0f7fa;
+  color: #00796b;
+  border: 1px solid #00796b;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.btn-quantidade:hover {
+  background: #b2ebf2;
+}
+
+.btn-adicionar {
+  background: #ff9900;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.btn-adicionar:hover {
+  background: #ff6600;
+}
+
+.btn-adicionar.adicionado {
+  background: #4caf50 !important;
+  color: white;
+}
+
+.btn-remover {
+  background: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-remover:hover {
+  background: #c0392b;
+}
+
+/* SEM ESTOQUE */
+.sem-estoque {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* RODAPÉ FIXO */
+.menu-inferior {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.menu-inferior button {
+  background: #00796b;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 5px;
+}
+
+.menu-inferior button:hover {
+  background: #004d40;
+}
+
+/* TOTAL NO CARRINHO */
+.total-compra {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #00796b;
+  background: linear-gradient(to right, #e0f2f1, #b2dfdb);
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 25px auto;
+  width: fit-content;
+  max-width: 95%;
+  transition: transform 0.3s ease;
+}
+
+.total-compra:hover {
+  transform: scale(1.03);
+}
+
+/* BOTÕES DOS SEMESTRES */
+#botoes-listas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.btn-semestre {
+  background: linear-gradient(135deg, #00bfa5, #00796b);
+  color: white;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 121, 107, 0.3);
+}
+
+.btn-semestre:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 121, 107, 0.4);
+}
+
+/* MODAL DE ZOOM */
+.imagem-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.imagem-modal-conteudo {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-modal-conteudo img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+}
+
+.fechar-modal {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* FINALIZAR CARRINHO CENTRALIZADO */
+.formulario-finalizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.formulario-finalizar .btn {
+  padding: 14px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+}
+/* ================================
+   ESTILO EXCLUSIVO PARA CADASTRO
+   ================================ */
+   body.pagina-cadastro {
+    background: linear-gradient(to right, #e0f7fa, #b2dfdb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  body.pagina-cadastro .container-cadastro {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  body.pagina-cadastro .container-cadastro h1 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+  
+  body.pagina-cadastro .container-cadastro input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  body.pagina-cadastro .container-cadastro input:focus {
+    border-color: #00bfa5;
+    box-shadow: 0 0 0 2px rgba(0,191,165,0.2);
+  }
+  
+  body.pagina-cadastro .container-cadastro button {
+    width: 100%;
+    background-color: #00796b;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  body.pagina-cadastro .container-cadastro button:hover {
+    background-color: #004d40;
+  }
+  

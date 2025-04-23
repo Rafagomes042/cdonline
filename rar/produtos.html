@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - Casa do Dentista</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="produtos-page">
+  <header class="top-header">
+    <div class="logo">Casa do Dentista</div>
+    <div class="nav-buttons">
+      <button onclick="window.location.href='listas.html'" class="btn">Listas de Semestres</button>
+      <button onclick="window.location.href='index.html'" class="btn">Cadastro</button>
+      <button onclick="window.location.href='carrinho.html'" class="btn">Carrinho</button>
+    </div>
+  </header>
+
+  <section class="banner">
+    <h2>Faça já seu orçamento no nosso site e ganhe 10% de desconto</h2>
+  </section>
+
+  <section class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar produto..." onkeyup="buscarProdutos()">
+  </section>
+
+  <main id="produtosContainer" class="produtos-container">
+    <!-- Produtos serão carregados aqui -->
+  </main>
+
+  <nav class="menu-inferior">
+    <button onclick="location.href='index.html'">Início</button>
+    <button onclick="location.href='listas.html'">Listas</button>
+    <button onclick="location.href='carrinho.html'">Carrinho</button>
+  </nav>
+
+  <script src="produtos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
